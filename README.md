@@ -35,25 +35,25 @@ To use the shopping cart system, follow these steps:
 2. Use the shopping cart: Create an instance of the shopping cart class that implements the `Observable` interface. Create instances of the observers and attach them to the cart. Manipulate the cart by adding or deleting items. The observers will be notified of any changes in the cart's state.
 
 ```java
-// Create observers
-Observer observer1 = new ObserverImpl();
-Observer observer2 = new ObserverImpl();
+public class Main {
+    public static void main(String[] args) {
 
-// Create shopping cart
-Observable cart = new ShoppingCart();
+    Item item=new Item("Mobile",1000);
+    Item item2=new Item("charger",30);
 
-// Attach observers to the cart
-cart.attach(observer1);
-cart.attach(observer2);
+    observableImp observable=new observableImp();
+    observerImp observer=new observerImp();
 
-// Manipulate the cart
-Item item1 = new Item("Product 1", 10.0);
-Item item2 = new Item("Product 2", 20.0);
 
-cart.addItem(item1);
-cart.addItem(item2);
 
-cart.deleteItem(item1);
+    observable.attach(observer);
+    observable.addItem(item);
+    observable.addItem(item2);
+    observable.deleteItem(item2);
 
-// Detach an observer
-cart.detach(observer2);
+
+
+
+
+    }
+}
